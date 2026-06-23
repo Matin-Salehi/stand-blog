@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load render_partial %}
 
 
 {% block content %}
@@ -191,7 +192,7 @@
             <div class="col-lg-4">
                 <div class="sidebar">
                     <div class="row">
-                        {% include 'includes/sidebar.html' %}
+                        {% render_partial "home_app:sidebar_partial" %}
                     </div>
                 </div>
             </div>
