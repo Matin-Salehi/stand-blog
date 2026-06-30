@@ -1,11 +1,26 @@
 from django.shortcuts import render, get_object_or_404, redirect
-import blog_app
-from blog_app.models import Post, Category
+from blog_app.models import Post, Category, Comment
 from django.core.paginator import Paginator
 
 
 def post_detail(request, slug):
     post = Post.objects.get(slug=slug)
+    if request.method == 'POST':
+        content = request.POST.get('content')
+        parent_id = request.POST.get("parent_comment")
+
+        parent = None
+
+        if parent_id:
+            parent = Comment.objects.get(id=parent_id)
+
+        Comment.objects.create(
+            content=content,
+            author=request.user,
+            post=post,
+            parent_comment=parent
+        )
+
     return render(request, 'blog_app/post-details.html', {'post': post})
 
 def post_list(request):

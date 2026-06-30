@@ -100,28 +100,45 @@
                                                     <li>
                                                         <div class="author-thumb">
                                                             {% if comment.author.profile.image %}
-                                                            <img src="{{ comment.author.profile.image.url }}" alt="">
-                                                                {% else %}
-                                                            <img src="{% static 'icons/default-profile.jpg' %}" alt="">
-                                                                {% endif %}
+                                                                <img src="{{ comment.author.profile.image.url }}"
+                                                                     alt="">
+                                                            {% else %}
+                                                                <img src="{% static 'icons/default-profile.jpg' %}"
+                                                                     alt="">
+                                                            {% endif %}
+
                                                         </div>
                                                         <div class="right-content">
                                                             <h4>{{ comment.author.username }}<span>{{ comment.created_at }}</span>
                                                             </h4>
+
+
                                                             <p>{{ comment.content }}</p>
+
+                                                            <a href="#comment-form"
+                                                               class="reply-btn"
+                                                               data-comment-id="{{ comment.id }}"
+                                                               data-username="{{ comment.author.username }}">
+                                                                Reply
+                                                            </a>
                                                         </div>
+
+
                                                     </li>
                                                     {% for reply in comment.replies.all %}
                                                         <li class="replied">
                                                             <div class="author-thumb">
                                                                 {% if reply.author.profile.image %}
-                                                            <img src="{{ reply.author.profile.image.url }}" alt="">
+                                                                    <img src="{{ reply.author.profile.image.url }}"
+                                                                         alt="">
                                                                 {% else %}
-                                                            <img src="{% static 'icons/default-profile.jpg' %}" alt="">
+                                                                    <img src="{% static 'icons/default-profile.jpg' %}"
+                                                                         alt="">
                                                                 {% endif %}
                                                             </div>
                                                             <div class="right-content">
-                                                                <h4>{{ reply.author }}<span>{{ reply.created_at }}</span></h4>
+                                                                <h4>{{ reply.author }}<span>{{ reply.created_at }}</span>
+                                                                </h4>
                                                                 <p>{{ reply.content }}</p>
                                                             </div>
                                                         </li>
@@ -142,31 +159,27 @@
                                         <h2>Your comment</h2>
                                     </div>
                                     <div class="content">
-                                        <form id="comment" action="#" method="post">
+                                        <form id="comment-form" action="#" method="post">
+                                            {% csrf_token %}
                                             <div class="row">
-                                                <div class="col-md-6 col-sm-12">
-                                                    <fieldset>
-                                                        <input name="name" type="text" id="name" placeholder="Your name"
-                                                               required="">
-                                                    </fieldset>
-                                                </div>
-                                                <div class="col-md-6 col-sm-12">
-                                                    <fieldset>
-                                                        <input name="email" type="text" id="email"
-                                                               placeholder="Your email"
-                                                               required="">
-                                                    </fieldset>
-                                                </div>
-                                                <div class="col-md-12 col-sm-12">
-                                                    <fieldset>
-                                                        <input name="subject" type="text" id="subject"
-                                                               placeholder="Subject">
-                                                    </fieldset>
-                                                </div>
                                                 <div class="col-lg-12">
+
                                                     <fieldset>
-                                                    <textarea name="message" rows="6" id="message"
-                                                              placeholder="Type your comment" required=""></textarea>
+
+                                                        <div id="reply-info"
+                                                             style="display: none; margin-bottom: 15px;">
+                                                            Replying to <strong id="reply-username"></strong>
+
+                                                            <a href="#" id="cancel-reply" style="margin-left: 10px;">
+                                                                Cancel Reply
+                                                            </a>
+                                                        </div>
+
+                                                        <input type="hidden" name="parent_comment" id="parent-comment">
+
+                                                        <textarea name="content" rows="6" id="content"
+                                                                  placeholder="Type your comment"
+                                                                  required=""></textarea>
                                                     </fieldset>
                                                 </div>
                                                 <div class="col-lg-12">
@@ -194,6 +207,45 @@
             </div>
         </div>
     </section>
+
+    <script>
+        const parentInput = document.getElementById("parent-comment");
+        const replyInfo = document.getElementById("reply-info");
+        const replyUsername = document.getElementById("reply-username");
+        const cancelReply = document.getElementById("cancel-reply");
+
+        document.querySelectorAll(".reply-btn").forEach(button => {
+
+            button.addEventListener("click", function (e) {
+
+                e.preventDefault();
+
+                const commentId = this.dataset.commentId;
+                const username = this.dataset.username;
+
+                parentInput.value = commentId;
+
+                replyUsername.textContent = username;
+
+                replyInfo.style.display = "block";
+
+                document.getElementById("content").focus();
+
+            });
+
+        });
+
+        cancelReply.addEventListener("click", function (e) {
+
+            e.preventDefault();
+
+            parentInput.value = "";
+
+            replyInfo.style.display = "none";
+
+        });
+    </script>
+
 {% endblock %}
 
 
