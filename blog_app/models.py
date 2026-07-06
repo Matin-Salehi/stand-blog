@@ -70,3 +70,20 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"{self.author} | {self.created_at}"
+
+
+class Message(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    is_read = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['is_read', 'created_at']
+
+
+    def __str__(self):
+        return f"{self.email} | {self.title}"
+

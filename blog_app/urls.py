@@ -7,4 +7,5 @@ urlpatterns = [
     path('list', views.post_list, name='post_list'),
     path('category/<slug:slug>', views.category_detail, name='category_detail'),
     path('search', views.search, name='search'),
+    path('contactus', views.contactus, name='contactus'),
 ]

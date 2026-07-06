@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from blog_app.models import Post, Category, Comment
 from django.core.paginator import Paginator
+from .forms import Message, MessageForm
 
 
 def post_detail(request, slug):
@@ -42,3 +43,13 @@ def search(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'blog_app/blog.html', {'posts': page_obj})
+
+
+def contactus(request):
+    if request.method == 'POST':
+        form = MessageForm(data = request.POST)
+        if form.is_valid():
+            instance = form.save()
+    else:
+        form = MessageForm()
+    return render(request, 'blog_app/contact_us.html', {'form': form})
