@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from .forms import LoginForm
+from .forms import LoginForm, EditProfileForm
 
 def login_user(request):
     if request.user.is_authenticated:
@@ -60,3 +60,16 @@ def register_user(request):
             )
             return redirect('users_app:login')
     return render(request, "users_app/register.html", {})
+
+def edit_user(request):
+    if request.user.is_authenticated:
+        form = EditProfileForm(instance=request.user)
+        if request.method == "POST":
+            form = EditProfileForm(data=request.POST, instance=request.user)
+            if form.is_valid():
+                form.save()
+    else:
+        return redirect('home_app:home')
+
+    return render(request, 'users_app/edit-profile.html', {'form': form})
+
