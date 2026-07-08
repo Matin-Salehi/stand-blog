@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5549d890-4f24-4691-89c1-42a902342f4f" name="Changes" comment="add register form and view">
-      <change afterPath="$PROJECT_DIR$/blog_app/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_app/templates/blog_app/contact_us.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users_app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/blog_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blog_project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_app/templates/blog_app/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/templates/blog_app/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_app/templates/blog_app/post-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/templates/blog_app/post-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users_app/templates/users_app/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/users_app/templates/users_app/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users_app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +56,8 @@
     &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Matin/Desktop/blog_project/users_app/static&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -139,7 +137,9 @@
       <workItem from="1783092233663" duration="2605000" />
       <workItem from="1783102912688" duration="20000" />
       <workItem from="1783172467991" duration="339000" />
-      <workItem from="1783346256427" duration="3591000" />
+      <workItem from="1783346256427" duration="4479000" />
+      <workItem from="1783436805086" duration="1097000" />
+      <workItem from="1783518852880" duration="3231000" />
     </task>
     <task id="LOCAL-00001" summary="add register form and view">
       <option name="closed" value="true" />
