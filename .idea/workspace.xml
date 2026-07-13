@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5549d890-4f24-4691-89c1-42a902342f4f" name="Changes" comment="add register form and view">
-      <change afterPath="$PROJECT_DIR$/users_app/templates/users_app/edit-profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users_app/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users_app/templatetags/filters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users_app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users_app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users_app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home_app/templates/home_app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home_app/templates/home_app/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -140,6 +138,7 @@
       <workItem from="1783346256427" duration="4479000" />
       <workItem from="1783436805086" duration="1097000" />
       <workItem from="1783518852880" duration="6319000" />
+      <workItem from="1783955313652" duration="1774000" />
     </task>
     <task id="LOCAL-00001" summary="add register form and view">
       <option name="closed" value="true" />
